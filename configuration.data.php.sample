@@ -1,0 +1,8 @@
+<?php
+$configArray = array(
+
+	// DB section
+	'db_user' => '<app-db-user-login>',
+	'db_password' => '<app-db-user-login>',
+	'db_dsn' => 'mysql:dbname=<db-name>;host=<db-host>',
+);
