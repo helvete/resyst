@@ -1,13 +1,14 @@
 <?php
 $time = -microtime(true);
-include "./config.php";
-include "./pdo_connect.php";
-include './post.php';
-include './posts.php';
-include './tag.php';
-include "./publicController.php";
-include "./statLib.php";
-include "./view.php";
+include "./init.php";
+include APPLICATION_PATH . "/config.php";
+include APPLICATION_PATH . "/pdo_connect.php";
+include APPLICATION_PATH . '/post.php';
+include APPLICATION_PATH . '/posts.php';
+include APPLICATION_PATH . '/tag.php';
+include APPLICATION_PATH . "/publicController.php";
+include APPLICATION_PATH . "/statLib.php";
+include APPLICATION_PATH . "/view.php";
 
 $ctrller = new PublicController();
 
@@ -18,8 +19,9 @@ $login = AuthLib::getLoggedUser();
 $displayName = AuthLib::getDisplayNameByLogin($login);
 echo $displayName
 	? "<div class=\"userAction\">Logged as <b>$displayName</b> &nbsp; "
-	: '';
+	: '<div>';
 AuthLib::getAction();
+
 echo '</div>';
 
 $ctrller->printHtml();
