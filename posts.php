@@ -28,16 +28,16 @@ class Posts implements Countable {
 	 */
 	public function get($count = false, $id = false, $tag = false) {
 		$queryString = '
-			SELECT resystdb.time as timestamp, resystdb.name as title,
-				resystdb.text as contents, resystdb.id as id,
-				resysttag.id as tag_id, resysttag.tagname as tag_name,
-				resysttag.parenttag as tag_parentName,
-				resysttag.colour as tag_colour
-			FROM resystdb
-			INNER JOIN resysttag
-				ON resystdb.tag = resysttag.id
-			'. ($id ? "WHERE resystdb.id = $id" : '') . '
-			'. ($tag ? "WHERE resysttag.tagname = '$tag'" : '') . '
+			SELECT resyst_db.time as timestamp, resyst_db.name as title,
+				resyst_db.text as contents, resyst_db.id as id,
+				resyst_tag.id as tag_id, resyst_tag.tagname as tag_name,
+				resyst_tag.parenttag as tag_parentName,
+				resyst_tag.colour as tag_colour
+			FROM resyst_db
+			INNER JOIN resyst_tag
+				ON resyst_db.tag = resyst_tag.id
+			'. ($id ? "WHERE resyst_db.id = $id" : '') . '
+			'. ($tag ? "WHERE resyst_tag.tagname = '$tag'" : '') . '
 			ORDER BY id DESC
 			'. ($count ? "LIMIT $count" : '') . '
 		';

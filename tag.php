@@ -106,9 +106,9 @@ class Tag {
 	 */
 	static private function _retrieveTagData() {
 		$queryString = '
-			SELECT resysttag.id as id, resysttag.tagname as name,
-				resysttag.parenttag as parentName, resysttag.colour as colour
-			FROM resysttag
+			SELECT resyst_tag.id as id, resyst_tag.tagname as name,
+				resyst_tag.parenttag as parentName, resyst_tag.colour as colour
+			FROM resyst_tag
 			ORDER BY parentName, id ASC
 		';
 		$pdo = DBConnector::getPDO();
