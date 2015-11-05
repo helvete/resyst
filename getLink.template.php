@@ -1,6 +1,6 @@
 <a class="link" href="
 	<?php
-	$target = $_SERVER['REQUEST_URI'];
+	$target = BASE_URI;
 	$first = true;
 	foreach ($link['operations'] as $name => $val) {
 		if ($first) {

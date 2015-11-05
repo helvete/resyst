@@ -1,10 +1,11 @@
 <?php
+echo "<span class=\"post-tag\">";
+$link = array('action' => '', 'operations' => array(), 'submit-val' => 'root',);
+include './getLink.template.php';
+echo "</span>";
+
 $i = 0; do {
-	if ($i > 0) {
-		echo "<span class=\"arrow\">&nbsp;>>&nbsp;</span>";
-	} else {
-		echo "<span class=\"gap\"></span>";
-	}
+	echo "<span class=\"arrow\">&nbsp;>>&nbsp;</span>";
 ?>
 <span class="post-tag l<?php echo $i; ?>"
 	title="Category tag level <?php echo $i; ?>"
