@@ -5,7 +5,7 @@
  */
 class Conf {
 
-	const CONFIG_FILE_NAME = APPLICATION_PATH . '/configuration.data.php';
+	const CONFIG_FILE_NAME = CONFIG_FILE_NAME;
 
 	/**
 	 * Config cache
