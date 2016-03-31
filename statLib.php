@@ -10,8 +10,9 @@ class AuthLib {
 	 * @return void
 	 */
 	static public function getAction() {
+		$links = array();
 		if (isset($_SESSION['user'])) {
-			$link = array(
+			$links[] = array(
 				'action' => 'login.php',
 				'operations' => array(
 					'logout' => 1,
@@ -19,13 +20,15 @@ class AuthLib {
 				'submit-val' => 'Logout',
 			);
 		} else {
-			$link = array(
+			$links[] = array(
 				'action' => 'login.php',
 				'operations' => array(),
 				'submit-val' => 'Login',
 			);
 		}
-		include './postLink.template.php';
+		foreach ($links as $link) {
+			include './postLink.template.php';
+		}
 	}
 
 
@@ -48,6 +51,9 @@ class AuthLib {
 	 * @return string|false
 	 */
 	static public function getDisplayNameByLogin($login) {
+		if ($login === false) {
+			return $login;
+		}
 		include_once "./pdo_connect.php";
 		$pdo = DBConnector::getPDO();
 
