@@ -19,6 +19,13 @@ class AuthLib {
 				),
 				'submit-val' => 'Logout',
 			);
+			$links[] = array(
+				'action' => '',
+				'operations' => array(
+					'listActions' => 1,
+				),
+				'submit-val' => 'Actions',
+			);
 		} else {
 			$links[] = array(
 				'action' => 'login.php',

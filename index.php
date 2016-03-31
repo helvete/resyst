@@ -12,13 +12,16 @@ include APPLICATION_PATH . "/adminController.php";
 include APPLICATION_PATH . "/statLib.php";
 include APPLICATION_PATH . "/view.php";
 
+$login = AuthLib::getLoggedUser();
+$displayName = AuthLib::getDisplayNameByLogin($login);
+if ($displayName) {
+	$ctrller = new AdminController();
+}
 $ctrller = new PublicController();
+
 
 View::addHeadLine('<title>R2</title>');
 View::printPageStart();
-
-$login = AuthLib::getLoggedUser();
-$displayName = AuthLib::getDisplayNameByLogin($login);
 echo $displayName
 	? "<div class=\"userAction\">Logged as <b>$displayName</b> &nbsp; "
 	: '<div>';
