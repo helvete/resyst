@@ -6,7 +6,9 @@ include APPLICATION_PATH . "/pdo_connect.php";
 include APPLICATION_PATH . '/post.php';
 include APPLICATION_PATH . '/posts.php';
 include APPLICATION_PATH . '/tag.php';
+include APPLICATION_PATH . "/baseController.php";
 include APPLICATION_PATH . "/publicController.php";
+include APPLICATION_PATH . "/adminController.php";
 include APPLICATION_PATH . "/statLib.php";
 include APPLICATION_PATH . "/view.php";
 
